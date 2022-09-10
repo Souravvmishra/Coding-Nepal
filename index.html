@@ -7,6 +7,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
@@ -15,8 +31,7 @@
 
     <link rel="stylesheet" href="/style.css" />
 
-    <!-- <script src="./script.js"></script> -->
-    <title>Document</title>
+    <title>PortFolio</title>
 
     <!-- 
     Styling Animation
@@ -38,14 +53,13 @@
   <body class="relative">
     <header
       id="Home"
-      class="h-[100vh]  px-4 sm:px-14 xl:px-24 g-cover bg-fixed bg-no-repeat"
-      style="background-image: url(./IMG_20211014_053621.jpg)"
+      class="h-[100vh] w-[100%] px-4 sm:px-14 xl:px-24 bg-contain bg-fixed bg-no-repeat bg-gray-800" 
     >
       <!--         
         Navbar start -->
 
       <nav
-        class="flex justify-between px-4 sm:px-14 xl:px-24 left-0 w-[calc(100%)] items-center  h-24 text-white top-0 transition-all duration-500 z-40  fixed"
+        class="flex justify-between px-4 sm:px-14 xl:px-24 left-0 w-[calc(100%)] items-center h-24 text-white top-0 transition-all duration-500 z-40 fixed"
       >
         <div class="text-4xl font-semibold cursor-pointer">
           Portfo<span
@@ -58,7 +72,7 @@
         <div class="relative z-40">
           <span
             id="hamburger"
-            class=" menu-btn transition-all duration-700 absolute bottom-0 cursor-pointer xl:hidden right-0 text-4xl"
+            class="menu-btn transition-all duration-700 absolute bottom-0 cursor-pointer xl:hidden right-0 text-4xl"
             ><i id="ham-anim" class="text-2xl font-bold material-icons"
               >dehaze</i
             ></span
@@ -66,7 +80,7 @@
 
           <span
             id="cross"
-            class=" menu-btn relative transition-all duration-700 cursor-pointer  -right-[50vw]  xl:hidden"
+            class="menu-btn relative transition-all duration-700 cursor-pointer -right-[50vw] xl:hidden"
             ><i id="cross-anim" class="text-2xl font-bold material-icons"
               >clear</i
             ></span
@@ -94,13 +108,13 @@
               <a href="#services">Services</a>
             </li>
             <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="">Skills</a>
+              <a href="#skills">Skills</a>
             </li>
             <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="">Teams</a>
+              <a href="#team">Team</a>
             </li>
             <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -115,7 +129,6 @@
           const menulistitems = document.querySelector("menulistitems");
 
           hamburger.onclick = function () {
-            
             hamburger.classList.toggle("-right-[50vw]");
             cross.classList.toggle("-right-[50vw]");
             cross.classList.toggle("right-0");
@@ -126,7 +139,6 @@
           };
 
           cross.onclick = function () {
-            
             cross.classList.toggle("-right-[50vw]");
             hamburger.classList.toggle("-right-[50vw]");
             cross.classList.toggle("right-0");
@@ -136,6 +148,19 @@
             mobmenu.classList.toggle("left-0");
             mobmenu.classList.toggle("-left-[100vw]");
           };
+
+          $("nav div  ul  li a ").click({
+            function() {
+              cross.classList.toggle("-right-[50vw]");
+              hamburger.classList.toggle("-right-[50vw]");
+              cross.classList.toggle("right-0");
+              hamburger.classList.toggle("rigth-0");
+              // hamanim.clasList.toggle("animate-spin3")
+              crossanim.classList.toggle("animate-spin3");
+              mobmenu.classList.toggle("left-0");
+              mobmenu.classList.toggle("-left-[100vw]");
+            },
+          });
 
           $(window).on("scroll", function () {
             if ($(window).scrollTop()) {
@@ -165,7 +190,8 @@
              -->
 
       <div
-        class="text-2xl flex flex-col top-[30vh] absolute gap-y-1 py-[20vh]  font-semibold text-white sm:text-3xl   transition-all duration-500"
+        id="home"
+        class="text-2xl flex flex-col top-[30vh] absolute gap-y-1 py-[20vh] font-semibold text-white sm:text-3xl transition-all duration-500"
       >
         <div>Hello, my name is</div>
         <div
@@ -191,9 +217,7 @@
       <!-- ABOUT SECTION START  -->
 
       <section id="about" class="h-auto">
-        <div
-          class="flex flex-col items-center  bg-white py-14 gap-y-10"
-        >
+        <div class="flex flex-col items-center bg-white py-14 gap-y-10">
           <div class="flex flex-col items-center gap-y-2">
             <h4 class="text-5xl font-semibold">About Me</h4>
             <span
@@ -207,8 +231,8 @@
           >
             <div class="overflow-hidden rounded md:w-[50%]">
               <img
-                class="h-80 w-80 md:rounded-md"
-                src="./IMG_20211014_053621.jpg"
+                class="h-80 w-80 md:rounded-md border-2 border-black p-8 "
+                src="./1661913774989.jpg"
                 alt="picture"
               />
             </div>
@@ -219,12 +243,8 @@
                 <span class="text-[crimson]">Freelancer</span>
               </h5>
               <p class="text-xl text-justify leading-tight">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-                minus ex nihil? Ex mollitia beatae autem assumenda accusamus
-                harum ipsa, cupiditate tenetur obcaecati tempora eligendi
-                placeat magnam ipsam nisi qui adipisci corporis temporibus aut
-                libero velit ab deserunt ad iure. Asperiores, tempore error
-                facilis dolore et quis vero quae. Quis.
+                Highly motivated self-starter and capable of working under pressure possessing good communication and interpersonal skills with good sense of humor.
+                 Possess excellent problem solving ability with quick decision making capability. Highly flexible and adaptable performer with good team building power resulting in outstanding results
               </p>
               <div
                 class="px-3 py-2 bg-[crimson] font-semibold y text-center my-3 rounded ring-2 ring-[crimson] text-white hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-2xl w-52"
@@ -240,9 +260,9 @@
       <!-- SERVICES SECTION START  -->
       <section id="services" class="h-auto">
         <div
-          class="flex flex-col items-center px-4 sm:px-14  xl:px-24 bg-black py-14 gap-y-10"
+          class="flex flex-col items-center px-4 sm:px-14 xl:px-24 bg-black py-14 gap-y-10"
         >
-          <div class="flex flex-col items-center gap-y-2 ">
+          <div class="flex flex-col items-center gap-y-2">
             <h4 class="text-5xl font-semibold text-white">My Services</h4>
             <span
               class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-white before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-white after:absolute after:-right-16 after:top-4"
@@ -250,9 +270,11 @@
             >
           </div>
 
-          <div class="md:flex md:flex-wrap md:justify-center xl:justify-between xl:flex-nowrap   gap-x-5 ">
+          <div
+            class=" md:flex md:flex-wrap md:justify-center xl:justify-between xl:flex-nowrap gap-x-5"
+          >
             <div
-              class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto "
+              class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
             >
               <i
                 class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]"
@@ -265,6 +287,8 @@
                 Reiciendis quasi neque doloribus. Autem, quae fuga.
               </p>
             </div>
+
+            
 
             <div
               class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
@@ -280,6 +304,8 @@
                 Reiciendis quasi neque doloribus. Autem, quae fuga.
               </p>
             </div>
+
+      
 
             <div
               class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
@@ -297,11 +323,12 @@
             </div>
           </div>
         </div>
+
       </section>
 
       <!-- ABOUT SECTION END -->
 
-      <!-- SCRIPT FOR ABOUT -->
+      SCRIPT FOR ABOUT -->
       <script>
         $(".card").hover(
           function () {
@@ -312,23 +339,21 @@
             $(this).children(".cardicon").addClass("text-white");
           },
           function () {
-            $(".card").removeClass("scale-105");
+            $(this).removeClass("scale-105");
+            $(this).addClass("bg-[#1d1919] ");
+            $(this).removeClass("bg-[crimson]");
             $(this).children(".cardicon").addClass("text-[crimson]");
             $(this).children(".cardicon").removeClass("text-white");
-            $(".card").removeClass("bg-[crimson]");
-            $(".card").addClass("bg-[#1d1919] ");
-            $(".card").removeClass("bg-[crimson]");
+            // $(this).removeClass("bg-[crimson]");
           }
         );
-      </script>
+      </script> 
 
       <!-- SCRIPT END ABOUT -->
 
       <!-- SKILLS SECTION START  -->
-      <section id="services" class="h-auto">
-        <div
-          class="flex flex-col items-center bg-white py-14 "
-        >
+      <section class="h-auto">
+        <div id="skills" class="flex flex-col items-center bg-white py-14">
           <div class="flex flex-col items-center gap-y-2">
             <h4 class="text-5xl font-semibold text-black">My Skills</h4>
             <span
@@ -338,7 +363,7 @@
           </div>
 
           <div
-            class="flex flex-col   md:flex-row  md:items-baseline md:justify-center   py-14 px-4 sm:px-14 xl:px-24"
+            class="flex flex-col md:flex-row md:items-baseline md:justify-center py-14 px-4 sm:px-14 xl:px-24"
           >
             <div class="flex flex-col shrink gap-y-3 md:w-[50%]">
               <h5 class="text-2xl font-semibold">
@@ -360,7 +385,9 @@
               </div>
             </div>
 
-            <div class="flex flex-col justify-center pt-14 gap-y-5 xl:gap-y-5 w-[100%] md:w-[50%] md:ml-10">
+            <div
+              class="flex flex-col justify-center pt-14 gap-y-5 xl:gap-y-5 w-[100%] md:w-[50%] md:ml-10"
+            >
               <div
                 class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[90%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
               >
@@ -402,10 +429,8 @@
       <!-- SKILLS SECTION END  -->
       <!-- TEAMS SECTION START  -->
 
-      <section id="services" class="h-auto">
-        <div
-          class="flex flex-col items-center  bg-black py-24 gap-y-10"
-        >
+      <section id="team" class="h-auto">
+        <div class="flex flex-col items-center bg-black py-24 gap-y-10">
           <div class="flex flex-col items-center gap-y-2">
             <h4 class="text-5xl font-semibold text-white">My Team</h4>
             <span
@@ -415,9 +440,27 @@
           </div>
 
           <!-- OWL CROUSEL  -->
-          <div></div>
+          <div class="autoplay text-white">
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+          </div>
         </div>
       </section>
     </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(".autoplay").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+    </script>
   </body>
 </html>
