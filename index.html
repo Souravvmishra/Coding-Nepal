@@ -1,144 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <link rel="stylesheet" href="/style.css" />
 
-    <title>PortFolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <!-- 
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link rel="stylesheet" href="/style.css" />
+
+  <title>PortFolio</title>
+
+  <!-- 
     Styling Animation
      -->
 
-    <style>
-      @keyframes spin {
-        to {
-          transform: rotate(180deg);
-        }
+  <style>
+    @keyframes spin {
+      to {
+        transform: rotate(180deg);
       }
+    }
 
-      .animate-spin3 {
-        animation: spin 1s linear 1;
-      }
-    </style>
-  </head>
+    .animate-spin3 {
+      animation: spin 1s linear 1;
+    }
+  </style>
+</head>
 
-  <body class="relative">
-    <header
-      id="Home"
-      class="h-[100vh] w-[100%] px-4 sm:px-14 xl:px-24 bg-contain bg-fixed bg-no-repeat bg-gray-800" 
-    >
-      <!--         
+<body class="relative">
+  <header id="Home" class="h-[100vh] w-[100%] px-4 sm:px-14 xl:px-24 bg-contain bg-fixed bg-no-repeat bg-gray-800">
+    <!--         
         Navbar start -->
 
-      <nav
-        class="flex justify-between px-4 sm:px-14 xl:px-24 left-0 w-[calc(100%)] items-center h-24 text-white top-0 transition-all duration-500 z-40 fixed"
-      >
-        <div class="text-4xl font-semibold cursor-pointer">
-          Portfo<span
-            id="lio"
-            class="text-[crimson] font-semibold transition-all duration-300"
-            >lio.</span
-          >
-        </div>
+    <nav
+      class="flex justify-between px-4 sm:px-14 xl:px-24 left-0 w-[calc(100%)] items-center h-24 text-white top-0 transition-all duration-500 z-40 fixed ">
+      <div class="text-4xl font-semibold cursor-pointer">
+        Portfo<span id="lio" class="text-[crimson] font-semibold transition-all duration-300">lio.</span>
+      </div>
 
-        <div class="relative z-40">
-          <span
-            id="hamburger"
-            class="menu-btn transition-all duration-700 absolute bottom-0 cursor-pointer xl:hidden right-0 text-4xl"
-            ><i id="ham-anim" class="text-2xl font-bold material-icons"
-              >dehaze</i
-            ></span
-          >
+      <div class="relative z-40">
+        <span id="hamburger"
+          class="menu-btn transition-all duration-700 absolute bottom-0 cursor-pointer xl:hidden right-0 text-4xl"><i
+            id="ham-anim" class="text-2xl font-bold material-icons">dehaze</i></span>
 
-          <span
-            id="cross"
-            class="menu-btn relative transition-all duration-700 cursor-pointer -right-[50vw] xl:hidden"
-            ><i id="cross-anim" class="text-2xl font-bold material-icons"
-              >clear</i
-            ></span
-          >
-        </div>
+        <span id="cross" class="menu-btn relative transition-all duration-700 cursor-pointer -right-[50vw] xl:hidden"><i
+            id="cross-anim" class="text-2xl font-bold material-icons">clear</i></span>
+      </div>
 
-        <!--                 
+      <!--                 
                 MOB MENU 
                  -->
 
-        <div
-          id="mob-menu"
-          class="absolute z-30 w-[100vw] h-[100vh] bg-black top-0 -left-[100vw] transition-all duration-500 xl:flex xl:static xl:flow-right xl:bg-red-50 xl:bg-transparent xl:w-auto"
-        >
-          <ul
-            class="flex flex-col gap-y-8 text-2xl font-semibold py-24 items-center xl:flex-row xl:gap-x-8 xl:text-xl"
-          >
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#home">Home</a>
-            </li>
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#about">About</a>
-            </li>
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#services">Services</a>
-            </li>
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#skills">Skills</a>
-            </li>
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#team">Team</a>
-            </li>
-            <li id="menulistitems" class="hover:text-[crimson]">
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+      <div id="mob-menu"
+        class="absolute z-30 w-[100vw] h-[100vh] bg-black top-0 -left-[100vw] transition-all duration-500 xl:flex xl:static xl:flow-right xl:bg-red-50 xl:bg-transparent xl:w-auto">
+        <ul class="flex flex-col gap-y-8 text-2xl font-semibold py-24 items-center xl:flex-row xl:gap-x-8 xl:text-xl">
+          <li id="menulistitems" class="">
+            <a href="#home">Home</a>
+          </li>
+          <li id="menulistitems" class="">
+            <a href="#about">About</a>
+          </li>
+          <li id="menulistitems" class="">
+            <a href="#services">Services</a>
+          </li>
+          <li id="menulistitems" class="">
+            <a href="#skills">Skills</a>
+          </li>
+          <li id="menulistitems" class="">
+            <a href="#team">Team</a>
+          </li>
+          <li id="menulistitems" class="">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-        <script>
-          const hamburger = document.querySelector("#hamburger");
-          const cross = document.querySelector("#cross");
-          const hamanim = document.querySelector("#ham-anim");
-          const crossanim = document.querySelector("#cross-anim");
-          const mobmenu = document.querySelector("#mob-menu");
-          const lio = document.querySelector("#lio");
-          const menulistitems = document.querySelector("menulistitems");
+      <script>
+        const hamburger = document.querySelector("#hamburger");
+        const cross = document.querySelector("#cross");
+        const hamanim = document.querySelector("#ham-anim");
+        const crossanim = document.querySelector("#cross-anim");
+        const mobmenu = document.querySelector("#mob-menu");
+        const lio = document.querySelector("#lio");
+        const menulistitems = document.querySelector("menulistitems");
 
-          hamburger.onclick = function () {
-            hamburger.classList.toggle("-right-[50vw]");
-            cross.classList.toggle("-right-[50vw]");
-            cross.classList.toggle("right-0");
-            hamanim.classList.toggle("animate-spin3");
-            mobmenu.classList.toggle("left-0");
-            mobmenu.classList.toggle("-left-[100vw]");
-            // crossanim.classList.toggle("animate-spin3")
-          };
+        hamburger.onclick = function () {
+          hamburger.classList.toggle("-right-[50vw]");
+          cross.classList.toggle("-right-[50vw]");
+          cross.classList.toggle("right-0");
+          hamanim.classList.toggle("animate-spin3");
+          mobmenu.classList.toggle("left-0");
+          mobmenu.classList.toggle("-left-[100vw]");
+        };
 
-          cross.onclick = function () {
+        cross.onclick = function fadeMenu() {
+          cross.classList.toggle("-right-[50vw]");
+          hamburger.classList.toggle("-right-[50vw]");
+          cross.classList.toggle("right-0");
+          hamburger.classList.toggle("rigth-0");
+          crossanim.classList.toggle("animate-spin3");
+          mobmenu.classList.toggle("left-0");
+          mobmenu.classList.toggle("-left-[100vw]");
+        };
+
+        $("#mob-menu ul li").click(
+          function () {
             cross.classList.toggle("-right-[50vw]");
             hamburger.classList.toggle("-right-[50vw]");
             cross.classList.toggle("right-0");
@@ -147,320 +129,485 @@
             crossanim.classList.toggle("animate-spin3");
             mobmenu.classList.toggle("left-0");
             mobmenu.classList.toggle("-left-[100vw]");
-          };
+          },
+        );
 
-          $("nav div  ul  li a ").click({
-            function() {
-              cross.classList.toggle("-right-[50vw]");
-              hamburger.classList.toggle("-right-[50vw]");
-              cross.classList.toggle("right-0");
-              hamburger.classList.toggle("rigth-0");
-              // hamanim.clasList.toggle("animate-spin3")
-              crossanim.classList.toggle("animate-spin3");
-              mobmenu.classList.toggle("left-0");
-              mobmenu.classList.toggle("-left-[100vw]");
-            },
-          });
 
-          $(window).on("scroll", function () {
-            if ($(window).scrollTop()) {
-              $("nav").addClass("bg-[crimson]");
-              $("nav").addClass("h-16");
-              // $("nav").addClass("sticky");
-              $("#lio").removeClass("text-[crimson]");
-              $("#lio").addClass("text-white");
-              $("nav > div > ul > li ").removeClass("hover:text-[crimson]");
-              $("nav > div > ul > li > a").addClass("hover:border-b-2");
-              $("nav > div > ul > li > a").addClass("hover:border-black");
-            } else {
-              $("nav").removeClass("bg-[crimson]");
-              $("nav").removeClass("h-16");
-              $(lio).removeClass("text-white");
-              $("#lio").addClass("text-[crimson]");
-              $("#lio").removeClass("text-white");
-              $("nav > div > ul > li ").addClass("hover:text-[crimson]");
-              $("nav > div > ul > li > a").removeClass("hover:border-b-2");
-              $("nav > div > ul > li > a").removeClass("hover:border-black");
-            }
-          });
-        </script>
-      </nav>
-      <!-- 
+        $(".menulistitems").hover(
+          function () {
+            $("#mob-menu ul li").classList.addClass('text-[crimson]')
+
+          },
+        );
+
+
+
+
+
+
+
+
+        $(window).on("scroll", function () {
+          if ($(window).scrollTop()) {
+            $("nav").addClass("bg-[crimson]");
+            $("nav").addClass("h-16");
+            // $("nav").addClass("sticky");
+            $("#lio").removeClass("text-[crimson]");
+            $("#lio").addClass("text-white");
+            $("nav > div > ul > li ").removeClass("hover:text-[crimson]");
+            $("nav > div > ul > li > a").addClass("hover:border-b-2");
+            $("nav > div > ul > li > a").addClass("hover:border-black");
+          } else {
+            $("nav").removeClass("bg-[crimson]");
+            $("nav").removeClass("h-16");
+            $(lio).removeClass("text-white");
+            $("#lio").addClass("text-[crimson]");
+            $("#lio").removeClass("text-white");
+            $("nav > div > ul > li ").addClass("hover:text-[crimson]");
+            $("nav > div > ul > li > a").removeClass("hover:border-b-2");
+            $("nav > div > ul > li > a").removeClass("hover:border-black");
+          }
+        });
+      </script>
+    </nav>
+    <!-- 
         Nav Bar Ends
              -->
 
+    <div id="home"
+      class="text-2xl flex flex-col top-[30vh] absolute gap-y-1 py-[20vh] font-semibold text-white sm:text-3xl transition-all duration-500">
+      <div>Hello, my name is</div>
       <div
-        id="home"
-        class="text-2xl flex flex-col top-[30vh] absolute gap-y-1 py-[20vh] font-semibold text-white sm:text-3xl transition-all duration-500"
-      >
-        <div>Hello, my name is</div>
-        <div
-          class="text-5xl sm:text-7xl font-semibold transition-all duration-500"
-        >
-          Sourav Mishra
-        </div>
-        <div>
-          And I'm a <span id="list_101" class="text-[crimson]">Youtuber</span>
-        </div>
-        <div
-          class="px-3 py-2 bg-[crimson] w-36 text-center my-3 rounded ring-2 ring-[crimson] hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-3xl"
-        >
-          <a href=""> Hire Me</a>
-        </div>
+        class="text-5xl sm:text-7xl font-semibold transition-all duration-500 animate__animated animate__bounceInRight">
+        Sourav Mishra
       </div>
-    </header>
-    <hr />
-    <!-- 
+      <div>
+        And I'm a
+        <span id="list_101" class=" text-4xl">
+          <span class="typed"></span><span class="cursor"> </span></span>
+      </div>
+
+      <style>
+        :root {
+          --animate-duration: 1000ms;
+        }
+
+        @keyframes blink {
+          0% {
+            opacity: 1;
+          }
+
+          50% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+      </style>
+
+
+      <div
+        class="px-3 py-2 bg-[crimson] w-36 text-center my-3 rounded ring-2 ring-[crimson] hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-3xl animate__animated animate__bounceInRight">
+        <a href=""> Hire Me</a>
+      </div>
+    </div>
+  </header>
+  <hr />
+  <!-- 
           MAIN BODY START
      -->
-    <main>
-      <!-- ABOUT SECTION START  -->
+  <main>
+    <!-- ABOUT SECTION START  -->
 
-      <section id="about" class="h-auto">
-        <div class="flex flex-col items-center bg-white py-14 gap-y-10">
-          <div class="flex flex-col items-center gap-y-2">
-            <h4 class="text-5xl font-semibold">About Me</h4>
-            <span
-              class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-black before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-black after:absolute after:-right-16 after:top-4"
-              >Who I am</span
-            >
+    <section id="about" class="h-auto">
+      <div class="flex flex-col items-center bg-white py-14 gap-y-10">
+        <div class="flex flex-col items-center gap-y-2">
+          <h4 class="text-5xl font-semibold">About Me</h4>
+          <span
+            class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-black before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-black after:absolute after:-right-16 after:top-4">Who
+            I am</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-y-8 md:flex-row md:justify-around px-4 sm:px-14 xl:px-24">
+          <div class="overflow-hidden rounded md:w-[50%]">
+            <img class="h-80 w-80 md:rounded-md border-2 border-black p-8 " src="./1661913774989.jpg" alt="picture" />
           </div>
+
+          <div class="flex flex-col gap-y-3 md:ml-10 md:w-[50%]">
+            <h5 class="text-2xl font-semibold">
+              I'm Sourav And I'm a <span class="sm:hidden"><br></span>
+              <span id="list_101" class=" text-2xl">
+                <span class="typed02"></span><span class="cursor"> </span></span>
+            </h5>
+            <p class="text-xl text-justify leading-tight">
+              Highly motivated self-starter and capable of working under pressure possessing good communication and
+              interpersonal skills with good sense of humor.
+              Possess excellent problem solving ability with quick decision making capability. Highly flexible and
+              adaptable performer with good team building power resulting in outstanding results
+            </p>
+            <div
+              class="px-3 py-2 bg-[crimson] font-semibold y text-center my-3 rounded ring-2 ring-[crimson] text-white hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-2xl w-52">
+              <a href="">Download CV</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION END -->
+    <!-- SERVICES SECTION START  -->
+    <section id="services" class="h-auto">
+      <div class="flex flex-col items-center px-4 sm:px-14 xl:px-24 bg-black py-14 gap-y-10">
+        <div class="flex flex-col items-center gap-y-2">
+          <h4 class="text-5xl font-semibold text-white">My Services</h4>
+          <span
+            class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-white before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-white after:absolute after:-right-16 after:top-4">What
+            I provide</span>
+        </div>
+
+        <div class=" md:flex md:flex-wrap md:justify-center xl:justify-between xl:flex-nowrap gap-x-5">
+          <div
+            class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto">
+            <i class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]">brush</i>
+
+            <h5 class="transition-all cardhead text-3xl">Web Design</h5>
+            <p class="transition-all cardtext text-justify px-4 text-base">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reiciendis quasi neque doloribus. Autem, quae fuga.
+            </p>
+          </div>
+
+
 
           <div
-            class="flex flex-col items-center gap-y-8 md:flex-row md:justify-around px-4 sm:px-14 xl:px-24"
-          >
-            <div class="overflow-hidden rounded md:w-[50%]">
-              <img
-                class="h-80 w-80 md:rounded-md border-2 border-black p-8 "
-                src="./1661913774989.jpg"
-                alt="picture"
-              />
-            </div>
+            class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto">
+            <i class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]">manage_accounts</i>
 
-            <div class="flex flex-col gap-y-3 md:ml-10 md:w-[50%]">
-              <h5 class="text-2xl font-semibold">
-                I'm Sourav And I'm a
-                <span class="text-[crimson]">Freelancer</span>
-              </h5>
-              <p class="text-xl text-justify leading-tight">
-                Highly motivated self-starter and capable of working under pressure possessing good communication and interpersonal skills with good sense of humor.
-                 Possess excellent problem solving ability with quick decision making capability. Highly flexible and adaptable performer with good team building power resulting in outstanding results
-              </p>
-              <div
-                class="px-3 py-2 bg-[crimson] font-semibold y text-center my-3 rounded ring-2 ring-[crimson] text-white hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-2xl w-52"
-              >
-                <a href="">Download CV</a>
-              </div>
-            </div>
+            <h5 class="transition-all cardhead text-3xl">Advertising</h5>
+            <p class="transition-all cardtext px-4 text-base text-justify">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reiciendis quasi neque doloribus. Autem, quae fuga.
+            </p>
           </div>
-        </div>
-      </section>
 
-      <!-- ABOUT SECTION END -->
-      <!-- SERVICES SECTION START  -->
-      <section id="services" class="h-auto">
-        <div
-          class="flex flex-col items-center px-4 sm:px-14 xl:px-24 bg-black py-14 gap-y-10"
-        >
-          <div class="flex flex-col items-center gap-y-2">
-            <h4 class="text-5xl font-semibold text-white">My Services</h4>
-            <span
-              class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-white before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-white after:absolute after:-right-16 after:top-4"
-              >What I provide</span
-            >
-          </div>
+
 
           <div
-            class=" md:flex md:flex-wrap md:justify-center xl:justify-between xl:flex-nowrap gap-x-5"
-          >
-            <div
-              class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
-            >
-              <i
-                class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]"
-                >brush</i
-              >
+            class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto">
+            <i class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]">code</i>
 
-              <h5 class="transition-all cardhead text-3xl">Web Design</h5>
-              <p class="transition-all cardtext text-justify px-4 text-base">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reiciendis quasi neque doloribus. Autem, quae fuga.
-              </p>
-            </div>
-
-            
-
-            <div
-              class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
-            >
-              <i
-                class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]"
-                >manage_accounts</i
-              >
-
-              <h5 class="transition-all cardhead text-3xl">Advertising</h5>
-              <p class="transition-all cardtext px-4 text-base text-justify">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reiciendis quasi neque doloribus. Autem, quae fuga.
-              </p>
-            </div>
-
-      
-
-            <div
-              class="card flex flex-col items-center my-10 py-10 bg-[#1d1919] gap-y-5 rounded text-white font-semibold transition-all duration-500 md:w-[46%] xl:w-auto"
-            >
-              <i
-                class="cardicon material-icons text-8xl transition-all duration-500 text-[crimson]"
-                >code</i
-              >
-
-              <h5 class="transition-all cardhead text-3xl">Apps Design</h5>
-              <p class="transition-all cardtext text-justify px-4 text-base">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Reiciendis quasi neque doloribus. Autem, quae fuga.
-              </p>
-            </div>
+            <h5 class="transition-all cardhead text-3xl">Apps Design</h5>
+            <p class="transition-all cardtext text-justify px-4 text-base">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Reiciendis quasi neque doloribus. Autem, quae fuga.
+            </p>
           </div>
         </div>
+      </div>
 
-      </section>
+    </section>
 
-      <!-- ABOUT SECTION END -->
+    <!-- ABOUT SECTION END -->
 
-      <!-- SCRIPT FOR ABOUT  -->
-      <script>
-        $(".card").hover(
-          function () {
-            $(this).addClass("scale-105");
-            $(this).removeClass("bg-[#1d1919] ");
-            $(this).addClass("bg-[crimson]");
-            $(this).children(".cardicon").removeClass("text-[crimson]");
-            $(this).children(".cardicon").addClass("text-white");
-          },
-          function () {
-            $(this).removeClass("scale-105");
-            $(this).addClass("bg-[#1d1919] ");
-            $(this).removeClass("bg-[crimson]");
-            $(this).children(".cardicon").addClass("text-[crimson]");
-            $(this).children(".cardicon").removeClass("text-white");
-            // $(this).removeClass("bg-[crimson]");
-          }
-        );
-      </script> 
-
-      <!-- SCRIPT END ABOUT -->
-
-      <!-- SKILLS SECTION START  -->
-      <section class="h-auto">
-        <div id="skills" class="flex flex-col items-center bg-white py-14">
-          <div class="flex flex-col items-center gap-y-2">
-            <h4 class="text-5xl font-semibold text-black">My Skills</h4>
-            <span
-              class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-black before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-black after:absolute after:-right-16 after:top-4"
-              >What I Know</span
-            >
-          </div>
-
-          <div
-            class="flex flex-col md:flex-row md:items-baseline md:justify-center py-14 px-4 sm:px-14 xl:px-24"
-          >
-            <div class="flex flex-col shrink gap-y-3 md:w-[50%]">
-              <h5 class="text-2xl font-semibold">
-                My Creative Skills & Experiences.
-              </h5>
-              <p class="text-xl text-justify leading-tight">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Voluptatem harum assumenda reiciendis non placeat qui
-                perferendis corporis tenetur asperiores nulla libero soluta
-                omnis, esse molestiae dolore recusandae blanditiis quia minus
-                vel fugiat animi. Rem, distinctio fuga aspernatur, neque
-                officia, dignissimos porro tenetur rerum est modi deleniti
-                corrupti? Rem, similique eum.
-              </p>
-              <div
-                class="px-3 py-2 bg-[crimson] w-36 text-center my-3 rounded ring-2 ring-[crimson] hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-3xl text-white font-semibold md:font-normal"
-              >
-                <a href=""> Hire Me</a>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-col justify-center pt-14 gap-y-5 xl:gap-y-5 w-[100%] md:w-[50%] md:ml-10"
-            >
-              <div
-                class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[90%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
-              >
-                <span>HTML</span>
-                <span>90%</span>
-              </div>
-
-              <div
-                class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[60%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
-              >
-                <span>CSS</span>
-                <span>60%</span>
-              </div>
-
-              <div
-                class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[80%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
-              >
-                <span>JavaScript</span>
-                <span>80%</span>
-              </div>
-
-              <div
-                class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[70%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
-              >
-                <span>Python</span>
-                <span>70%</span>
-              </div>
-
-              <div
-                class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[50%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1"
-              >
-                <span>MySQL</span>
-                <span>50%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- SKILLS SECTION END  -->
-      <!-- TEAMS SECTION START  -->
-
-      <section id="team" class="h-auto">
-        <div class="flex flex-col items-center bg-black py-24 gap-y-10">
-          <div class="flex flex-col items-center gap-y-2">
-            <h4 class="text-5xl font-semibold text-white">My Team</h4>
-            <span
-              class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-white before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-white after:absolute after:-right-16 after:top-4"
-              >Who's With Me</span
-            >
-          </div>
-
-          <!-- OWL CROUSEL  -->
-          <div class="autoplay text-white">
-            <div>your content</div>
-            <div>your content</div>
-            <div>your content</div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-      integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <!-- SCRIPT FOR ABOUT  -->
     <script>
-      $(".autoplay").slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-      });
+      $(".card").hover(
+        function () {
+          $(this).addClass("scale-105");
+          $(this).removeClass("bg-[#1d1919] ");
+          $(this).addClass("bg-[crimson]");
+          $(this).children(".cardicon").removeClass("text-[crimson]");
+          $(this).children(".cardicon").addClass("text-white");
+        },
+        function () {
+          $(this).removeClass("scale-105");
+          $(this).addClass("bg-[#1d1919] ");
+          $(this).removeClass("bg-[crimson]");
+          $(this).children(".cardicon").addClass("text-[crimson]");
+          $(this).children(".cardicon").removeClass("text-white");
+          // $(this).removeClass("bg-[crimson]");
+        }
+      );
     </script>
-  </body>
+
+    <!-- SCRIPT END ABOUT -->
+
+    <!-- SKILLS SECTION START  -->
+    <section class="h-auto">
+      <div id="skills" class="flex flex-col items-center bg-white py-14">
+        <div class="flex flex-col items-center gap-y-2">
+          <h4 class="text-5xl font-semibold text-black">My Skills</h4>
+          <span
+            class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-black before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-black after:absolute after:-right-16 after:top-4">What
+            I Know</span>
+        </div>
+
+        <div class="flex flex-col   md:flex-row md:items-baseline md:justify-center py-14 px-4 sm:px-14 xl:px-24">
+          <div class="flex flex-col shrink gap-y-3 md:w-[50%]">
+            <h5 class="text-2xl font-semibold">
+              My Creative Skills & Experiences.
+            </h5>
+            <p class="text-xl text-justify leading-tight">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Voluptatem harum assumenda reiciendis non placeat qui
+              perferendis corporis tenetur asperiores nulla libero soluta
+              omnis, esse molestiae dolore recusandae blanditiis quia minus
+              vel fugiat animi. Rem, distinctio fuga aspernatur, neque
+              officia, dignissimos porro tenetur rerum est modi deleniti
+              corrupti? Rem, similique eum.
+            </p>
+            <div
+              class="px-3 py-2 bg-[crimson] w-36 text-center my-3 rounded ring-2 ring-[crimson] hover:bg-transparent hover:text-[crimson] transition-all duration-500 text-xl sm:text-2xl md:text-3xl text-white font-semibold md:font-normal">
+              <a href=""> Hire Me</a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col justify-center grow  pt-14 gap-y-5 xl:gap-y-5 w-[100%] md:w-[50%] md:ml-10 items-stretch">
+            <div
+              class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[90%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1">
+              <span>HTML</span>
+              <span>90%</span>
+            </div>
+
+            <div
+              class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[60%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1">
+              <span>CSS</span>
+              <span>60%</span>
+            </div>
+
+            <div
+              class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[80%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1">
+              <span>JavaScript</span>
+              <span>80%</span>
+            </div>
+
+            <div
+              class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[70%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1">
+              <span>Python</span>
+              <span>70%</span>
+            </div>
+
+            <div
+              class="relative border-b-4 flex justify-between font-semibold text-xl after:contents-[] after:w-[50%] after:h-1 after:bg-[crimson] after:absolute after:-bottom-1">
+              <span>MySQL</span>
+              <span>50%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SKILLS SECTION END  -->
+    <!-- TEAMS SECTION START  -->
+
+    <section id="team" class="h-auto">
+      <div class="flex flex-col items-center bg-black py-24 gap-y-10">
+        <div class="flex flex-col items-center gap-y-2">
+          <h4 class="text-5xl font-semibold text-white">My Team</h4>
+          <span
+            class="relative text-xl font-semibold text-[crimson] before:contents-[] before:w-14 before:h-0.5 before:bg-white before:absolute before:-left-16 before:top-4 after:contents-[] after:w-14 after:h-0.5 after:bg-white after:absolute after:-right-16 after:top-4">Who's
+            With Me</span>
+        </div>
+
+        <!-- OWL CROUSEL  -->
+
+
+        <div class="owl-carousel owl-theme  xl:px-14">
+
+          <!-- component -->
+
+
+
+
+
+          <div class="item w-full scale-90 transition-all duration-500 px-4 mx-auto hover:scale-100 ">
+            <div class="relative group  flex flex-col min-w-0 break-words bg-[#1d1919]  text-white w-full  shadow-xl rounded-lg  hover:bg-[crimson] duration-500">
+              <div class="px-6">
+                <div class="flex flex-wrap ">
+                  <div class="w-3/4 mx-auto  mt-8 px-4 flex justify-center">
+                    <div class="team-item ">
+                      <img alt="..." src="./1661913774989.jpg" class="shadow-xl border-4 duration-500 group-hover:border-white border-[crimson] rounded-full ">
+                    </div>
+                  </div>
+                  <div class="w-full px-4 text-center">
+                    <div class="flex justify-center px-4 lg:pt-4 pt-8">
+                      <div class=" p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                          15+
+                        </span>
+                        <span class="text-sm text-blueGray-400">Clients</span>
+                      </div>
+                      <div class=" p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                          10+
+                        </span>
+                        <span class="text-sm text-blueGray-400">Companies</span>
+                      </div>
+                      <div class=" p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
+                          89+
+                        </span>
+                        <span class="text-sm text-blueGray-400">Projects</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <h3 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 ">
+                    Sourav Mishra
+                  </h3>
+                  <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
+                    <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
+                    Samba, Jammu & Kashmir
+                  </div>
+                  <div class="mb-2 text-blueGray-600 ">
+                    <i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
+                    WebApp & Website Developer
+                  </div>
+                  <div class="mb-2 text-blueGray-600">
+                    <i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
+                    GGM Science College
+                  </div>
+                </div>
+                <div class=" pt-10 border-t border-blueGray-200 text-center">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+         
+
+
+
+
+          
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <script src="typingEffect.js"></script>
+
+
+
+
+        <script>
+          $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+              animateOut: 'fadeOut',
+              stagePadding: 50,
+              loop: true,
+              autoplay: true,
+              autoplayTimeout: 2000,
+              autoplayHoverPause: true,
+              margin: 10,
+              responsive: {
+                0: {
+                  items: 1
+                },
+                600: {
+                  items: 2
+                },
+                1000: {
+                  items: 4
+                }
+              }
+            })
+          });
+
+
+          
+
+
+
+          // TYPED ANIMATION 
+
+
+          $(".typed").typing({
+            // time before backspacing in milliseconds
+            eraseDelay: 30,
+            // time before typing in milliseconds
+            typeDelay: 200,
+            // time before string typing in milliseconds
+            stringStartDelay: 0,
+            // text color
+            color: 'crimson',
+            // text color when typing
+            typingColor: 'white',
+            // opacity when typing
+            typingOpacity: '0.1',
+            // amount of loops
+            loopCount: 10000,
+            // shows blink cursor
+            cursorBlink: false,
+            // character for cursor
+            cursorChar: '<small>|</small>',
+            // enables fade animation
+            fade: false,
+            strings: ['Developer', 'YouTuber', 'Blogger', 'Creator']
+
+          });
+
+
+          $(".typed02").typing({
+            // time before backspacing in milliseconds
+            eraseDelay: 30,
+            // time before typing in milliseconds
+            typeDelay: 200,
+            // time before string typing in milliseconds
+            stringStartDelay: 0,
+            // text color
+            color: 'crimson',
+            // text color when typing
+            typingColor: 'black',
+            // opacity when typing
+            typingOpacity: '0.1',
+            // amount of loops
+            loopCount: 10000,
+            // shows blink cursor
+            cursorBlink: false,
+            // character for cursor
+            cursorChar: '<small>|</small>',
+            // enables fade animation
+            fade: false,
+            strings: ['Developer', 'YouTuber', 'Blogger', 'Creator']
+
+          });
+
+
+
+        </script>
+
+
+      </div>
+    </section>
+  </main>
+
+
+
+</body>
+
 </html>
